@@ -17,16 +17,16 @@ module AngleBrackets
   class Error < StandardError; end
 
   class << self
-    def html(&children)
-      AngleBrackets::Components::Html.new.render(&children)
+    def html(**kwargs, &children)
+      AngleBrackets::Components::Html.new(kwargs).render(&children)
     end
 
-    def head(&children)
-      AngleBrackets::Components::Head.new.render(&children)
+    def head(**kwargs, &children)
+      AngleBrackets::Components::Head.new(kwargs).render(&children)
     end
 
-    def body(&children)
-      AngleBrackets::Components::Body.new.render(&children)
+    def body(**kwargs, &children)
+      AngleBrackets::Components::Body.new(kwargs).render(&children)
     end
   end
 end
